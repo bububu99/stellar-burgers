@@ -4,7 +4,7 @@ import { TOrder } from '@utils-types';
 
 export const getUserOrders = createAsyncThunk(
   'userOrders/getOrders',
-  async () => await getOrdersApi()
+  getOrdersApi
 );
 
 export interface TUserOrdersState {

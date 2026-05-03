@@ -2,10 +2,7 @@ import { getFeedsApi } from '@api';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { TOrder } from '@utils-types';
 
-export const getFeeds = createAsyncThunk(
-  'feed/getFeeds',
-  async () => await getFeedsApi()
-);
+export const getFeeds = createAsyncThunk('feed/getFeeds', getFeedsApi);
 
 export interface TFeedState {
   orders: TOrder[];
