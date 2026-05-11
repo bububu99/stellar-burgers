@@ -1,4 +1,4 @@
-import store from '../src/services/store';
+import { rootReducer } from '../src/services/store'
 import { userSlice } from '../src/services/slices/user-slice';
 import { ingredientsSlice } from '../src/services/slices/ingredients-slice';
 import { constructorSlice } from '../src/services/slices/constructor-slice';
@@ -11,7 +11,7 @@ import { describe, test, expect } from '@jest/globals';
 describe('Тестирование инициализации rootReducer', () => {
   test('Корректность инициализации', () => {
     const testAction = { type: '@@INIT' };
-    const state = store.getState();
+    const state = rootReducer(undefined, testAction);
 
     expect(state).toEqual({
       user: userSlice.reducer(undefined, testAction),
